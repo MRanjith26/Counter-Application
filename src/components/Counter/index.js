@@ -6,6 +6,17 @@ import './index.css'
 //    data that can be change over the time is "count value" storing in state object
 class Counter extends Component {
   state = {count: 0}
+  onIncrement = () => {
+    this.setState(prevState => {
+      console.log(`Previous State count is  ${prevState.count}`)
+      return {count: prevState.count + 1}
+    })
+  }
+  onDecrement = () => {
+    this.setState(prevState => {
+      return {count: prevState.count - 1}
+    })
+  }
   render() {
     const {count} = this.state
     return (
